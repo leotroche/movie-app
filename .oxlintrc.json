@@ -1,0 +1,10 @@
+{
+  "categories": {
+    "correctness": "error"
+  },
+  "plugins": ["typescript", "unicorn", "oxc", "react", "jsx-a11y"],
+  "rules": {
+    "typescript/consistent-type-definitions": "error",
+    "typescript/consistent-type-imports": "error"
+  }
+}

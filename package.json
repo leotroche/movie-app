@@ -1,0 +1,17 @@
+{
+  "name": "movie-app",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r --parallel dev",
+    "format": "prettier --write .",
+    "lint": "oxlint --fix ."
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "oxlint": "^1.38.0",
+    "prettier": "^3.7.4",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "typescript": "^5.9.3"
+  }
+}

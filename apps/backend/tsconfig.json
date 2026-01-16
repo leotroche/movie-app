@@ -4,14 +4,17 @@
     "skipLibCheck": true,
     "target": "es2022",
 
-    "outDir": "dist",
-    "module": "nodenext",
-    "sourceMap": true,
+    "module": "preserve",
+    "noEmit": true,
 
-    // Strictness
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules"]

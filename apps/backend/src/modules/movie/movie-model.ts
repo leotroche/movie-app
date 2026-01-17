@@ -9,6 +9,7 @@ export interface Movie {
   backdropPath: string
   genres: MovieGenre[]
   id: number
+  mediaType: 'movie'
   overview: string
   popularity: number
   posterPath: string
@@ -16,7 +17,6 @@ export interface Movie {
   title: string
   voteAverage: number
   voteCount: number
-  type: 'movie'
 }
 
 export interface MovieGenre {

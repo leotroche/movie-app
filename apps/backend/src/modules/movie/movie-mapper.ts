@@ -19,12 +19,12 @@ function movieListItemMapper(movie: TmdbMovieListItem): Movie {
     backdropPath: movie.backdrop_path,
     genres,
     id: movie.id,
+    mediaType: 'movie',
     overview: movie.overview,
     popularity: movie.popularity,
     posterPath: movie.poster_path,
     releaseDate: movie.release_date,
     title: movie.title,
-    type: 'movie',
     voteAverage: movie.vote_average,
     voteCount: movie.vote_count,
   }

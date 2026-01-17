@@ -1,11 +1,28 @@
-import { tmdbClient } from '@/shared/tmdb/tmdb-client'
-import type { TmdbMovieList } from '@/shared/tmdb/tmdb-types'
+import { tmdbClient, type TmdbPaginatedListParams } from '@/shared/tmdb/tmdb-client'
 
-async function findPopular() {
-  const { data } = await tmdbClient.get<TmdbMovieList>('/movie/popular')
-  return data
+async function fetchNowPlaying(params?: TmdbPaginatedListParams) {
+  const response = await tmdbClient.movies.getNowPlaying(params)
+  return response.data
+}
+
+async function fetchPopular(params?: TmdbPaginatedListParams) {
+  const response = await tmdbClient.movies.getPopular(params)
+  return response.data
+}
+
+async function fetchTopRated(params?: TmdbPaginatedListParams) {
+  const response = await tmdbClient.movies.getTopRated(params)
+  return response.data
+}
+
+async function fetchUpcoming(params?: TmdbPaginatedListParams) {
+  const response = await tmdbClient.movies.getUpcoming(params)
+  return response.data
 }
 
 export const movieRepository = {
-  findPopular,
+  fetchNowPlaying,
+  fetchPopular,
+  fetchTopRated,
+  fetchUpcoming,
 }

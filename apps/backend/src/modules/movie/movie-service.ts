@@ -1,24 +1,24 @@
-import type { TmdbPaginatedListParams } from '@/shared/tmdb/tmdb-client'
 import { movieListMapper } from './movie-mapper'
+import type { MovieListParams } from './movie-model'
 import { movieRepository } from './movie-repository'
 
-async function getNowPlaying(params?: TmdbPaginatedListParams) {
-  const rawMovies = await movieRepository.fetchNowPlaying(params)
+async function getNowPlaying({ language = 'en-US', page = 1 }: MovieListParams = {}) {
+  const rawMovies = await movieRepository.fetchNowPlaying({ language, page })
   return movieListMapper(rawMovies)
 }
 
-async function getPopular(params?: TmdbPaginatedListParams) {
-  const rawMovies = await movieRepository.fetchPopular(params)
+async function getPopular({ language = 'en-US', page = 1 }: MovieListParams = {}) {
+  const rawMovies = await movieRepository.fetchPopular({ language, page })
   return movieListMapper(rawMovies)
 }
 
-async function getTopRated(params?: TmdbPaginatedListParams) {
-  const rawMovies = await movieRepository.fetchTopRated(params)
+async function getTopRated({ language = 'en-US', page = 1 }: MovieListParams = {}) {
+  const rawMovies = await movieRepository.fetchTopRated({ language, page })
   return movieListMapper(rawMovies)
 }
 
-async function getUpcoming(params?: TmdbPaginatedListParams) {
-  const rawMovies = await movieRepository.fetchUpcoming(params)
+async function getUpcoming({ language = 'en-US', page = 1 }: MovieListParams = {}) {
+  const rawMovies = await movieRepository.fetchUpcoming({ language, page })
   return movieListMapper(rawMovies)
 }
 

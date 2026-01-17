@@ -5,6 +5,10 @@ interface PaginatedList<T> {
   totalResults: number
 }
 
+// ------------------------------------------------------------
+// Movie List Models
+// ------------------------------------------------------------
+
 export interface Movie {
   backdropPath: string
   genres: MovieGenre[]
@@ -25,3 +29,16 @@ export interface MovieGenre {
 }
 
 export type MovieList = PaginatedList<Movie>
+
+// ------------------------------------------------------------
+// Movie List Params
+// ------------------------------------------------------------
+
+export const MovieListLanguageEnum = ['en-US', 'es-MX'] as const
+
+export type MovieListLanguage = (typeof MovieListLanguageEnum)[number]
+
+export interface MovieListParams {
+  language?: MovieListLanguage
+  page?: number
+}

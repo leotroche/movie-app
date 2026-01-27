@@ -1,0 +1,22 @@
+{
+  "name": "monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "type": "module",
+  "module": "index.ts",
+  "scripts": {
+    "dev": "bun run --workspaces dev",
+    "build": "bun run --workspaces build",
+    "start": "bun run --workspaces start",
+    "fmt": "oxfmt --write",
+    "lint": "oxlint --fix"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.27.0",
+    "oxlint": "^1.42.0",
+    "typescript": "^5.9.3"
+  }
+}

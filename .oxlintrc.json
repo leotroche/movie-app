@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": "error",
+    "@typescript-eslint/consistent-type-exports": "error"
+  }
+}
